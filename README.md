@@ -1,4 +1,4 @@
-# This is my package filament-copyable-placeholder
+# filament-copyable-placeholder
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/axonc/filament-copyable-placeholder.svg?style=flat-square)](https://packagist.org/packages/axonc/filament-copyable-placeholder)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/axonc/filament-copyable-placeholder/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/axonc/filament-copyable-placeholder/actions?query=workflow%3Arun-tests+branch%3Amain)
