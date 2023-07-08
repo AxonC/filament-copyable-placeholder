@@ -2,9 +2,9 @@
 
 namespace AxonC\FilamentCopyablePlaceholder\Tests;
 
+use AxonC\FilamentCopyablePlaceholder\FilamentCopyablePlaceholderServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use AxonC\FilamentCopyablePlaceholder\FilamentCopyablePlaceholderServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -2,9 +2,9 @@
 
 namespace AxonC\FilamentCopyablePlaceholder;
 
+use AxonC\FilamentCopyablePlaceholder\Commands\FilamentCopyablePlaceholderCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use AxonC\FilamentCopyablePlaceholder\Commands\FilamentCopyablePlaceholderCommand;
 
 class FilamentCopyablePlaceholderServiceProvider extends PackageServiceProvider
 {
