@@ -5,15 +5,15 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/axonc/filament-copyable-placeholder/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/axonc/filament-copyable-placeholder/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/axonc/filament-copyable-placeholder.svg?style=flat-square)](https://packagist.org/packages/axonc/filament-copyable-placeholder)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package provides a form field for the [Laravel Filament](https://filamentphp.com/) Admin panel framework which adds a copy button
+to the [Placeholder](https://filamentphp.com/docs/2.x/forms/layout#placeholder)
 
-## Support us
+### Examples
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/filament-copyable-placeholder.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/filament-copyable-placeholder)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+### Copy Button
+![](images/button_example.png)
+#### Icon Only
+![](images/basic_example.png)
 
 ## Installation
 
@@ -23,37 +23,83 @@ You can install the package via composer:
 composer require axonc/filament-copyable-placeholder
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-copyable-placeholder-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="filament-copyable-placeholder-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="filament-copyable-placeholder-views"
-```
-
 ## Usage
 
+All functionality mirrors the documentation found [here](https://filamentphp.com/docs/2.x/forms/layout#placeholder) for the `Placeholder` component. Additional functionality specific
+to this package can be found below.
+
+The copy behavior will take the value of the contents passed to the component and write to the clipboard
+via JavaScript. NOTE: This must support the `window.navigator` API.
+
+### Basic Usage
+
 ```php
-$filamentCopyablePlaceholder = new AxonC\FilamentCopyablePlaceholder();
-echo $filamentCopyablePlaceholder->echoPhrase('Hello, AxonC!');
+use AxonC\FilamentCopyablePlaceholder\Forms\Components\CopyablePlaceholder;
+
+CopyablePlaceholder::make('response')
+    ->content("Placeholder Content")
+```
+
+### Custom Icon Text
+
+```php
+use AxonC\FilamentCopyablePlaceholder\Forms\Components\CopyablePlaceholder;
+
+CopyablePlaceholder::make('response')
+    ->content("Placeholder Content")
+    ->buttonText("Kopieren")
+```
+
+### Icon Only Mode
+
+```php
+use AxonC\FilamentCopyablePlaceholder\Forms\Components\CopyablePlaceholder;
+
+CopyablePlaceholder::make('response')
+    ->content("Placeholder Content")
+    ->iconOnly()
+```
+
+#### Customize Icon
+
+Icon Text
+
+```php
+use AxonC\FilamentCopyablePlaceholder\Forms\Components\CopyablePlaceholder;
+
+CopyablePlaceholder::make('response')
+    ->content("Placeholder Content")
+    ->iconOnly()
+    ->icon("heroicons-o-{ICON-NAME}")
+```
+
+Icon Color
+
+```php
+use AxonC\FilamentCopyablePlaceholder\Forms\Components\CopyablePlaceholder;
+
+CopyablePlaceholder::make('response')
+    ->content("Placeholder Content")
+    ->iconOnly()
+    ->icon("heroicons-o-{ICON-NAME}")
+    ->iconColor("secondary")
+```
+
+### Overwriting Styles
+
+By default, some sensible Tailwind classes are applied to the content of the placeholder and the button.
+This results in some alignment being applied when in the button (it will establish a flex container with the button) or in icon-only mode will ensure it exists at the vertical end of the content.
+
+This behavior can be overridden by calling `extraAttributes` on the component.
+
+```php
+use AxonC\FilamentCopyablePlaceholder\Forms\Components\CopyablePlaceholder;
+
+CopyablePlaceholder::make('response')
+    ->content("Placeholder Content")
+    ->extraAttributes([
+        'class' => 'flex border-md-1'
+    ])
 ```
 
 ## Testing
