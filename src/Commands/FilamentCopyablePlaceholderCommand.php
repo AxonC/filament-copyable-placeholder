@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace AxonC\FilamentCopyablePlaceholder\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentCopyablePlaceholderCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-copyable-placeholder';
 
     public $description = 'My command';
 

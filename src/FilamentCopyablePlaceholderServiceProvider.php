@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace AxonC\FilamentCopyablePlaceholder;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use AxonC\FilamentCopyablePlaceholder\Commands\FilamentCopyablePlaceholderCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class FilamentCopyablePlaceholderServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('filament-copyable-placeholder')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_filament-copyable-placeholder_table')
+            ->hasCommand(FilamentCopyablePlaceholderCommand::class);
     }
 }
