@@ -2,6 +2,10 @@
 
 All notable changes to `filament-copyable-placeholder` will be documented in this file.
 
+## v0.2.3 - 2023-10-09
+
+Filament v3 compatibility.
+
 ## v0.2.1 - 2023-10-09
 
 Filament v3 compatibility.
