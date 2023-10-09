@@ -2,6 +2,10 @@
 
 All notable changes to `filament-copyable-placeholder` will be documented in this file.
 
+## v0.2.1 - 2023-10-09
+
+Filament v3 compatibility.
+
 ## v0.2.0 - 2023-10-09
 
 **Full Changelog**: https://github.com/AxonC/filament-copyable-placeholder/compare/v0.1.0...v0.2.0
