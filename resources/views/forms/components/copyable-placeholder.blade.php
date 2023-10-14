@@ -4,10 +4,6 @@
     :label="$getLabel()"
     :label-sr-only="$isLabelHidden()"
     :helper-text="$getHelperText()"
-    :hint="$getHint()"
-    :hint-action="$getHintAction()"
-    :hint-color="$getHintColor()"
-    :hint-icon="$getHintIcon()"
     :state-path="$getStatePath()"
 >
     <div
@@ -16,7 +12,7 @@
         {{ $getContent() }}
 
         @if($getIconOnly())
-            <x-filament-support::icon-button
+            <x-filament::icon-button
                 :attributes="\Filament\Support\prepare_inherited_attributes($attributes)"
                 :dark-mode="config('forms.dark_mode')"
                 :icon="$getIcon()"
@@ -24,7 +20,7 @@
                 x-on:click="navigator.clipboard.writeText('{{ $getContent() }}')"
             />
         @else
-            <x-filament-support::button
+            <x-filament::button
                 :attributes="\Filament\Support\prepare_inherited_attributes($attributes)"
                 :dark-mode="config('forms.dark_mode')"
                 :icon="$getIcon()"
@@ -33,7 +29,7 @@
                 x-on:click="navigator.clipboard.writeText('{{ $getContent() }}')"
             >
                 {{ $getButtonText() }}
-            </x-filament-support::button>
+            </x-filament::button>
         @endif
     </div>
 </x-dynamic-component>

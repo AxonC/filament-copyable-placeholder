@@ -9,7 +9,7 @@ class CopyablePlaceholder extends Placeholder
 {
     protected string $view = 'filament-copyable-placeholder::forms.components.copyable-placeholder';
 
-    protected string|Closure|null $icon = 'heroicon-o-clipboard-copy';
+    protected string|Closure|null $icon = 'heroicon-o-clipboard-document';
 
     protected string|Closure|null $iconColor = 'primary';
 
