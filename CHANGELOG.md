@@ -2,6 +2,10 @@
 
 All notable changes to `filament-copyable-placeholder` will be documented in this file.
 
+## v0.4.0 - 2026-04-05
+
+Allows Filament V4 compatibility.
+
 ## v0.3.0 - 2023-10-14
 
 Filament v3 fixes
